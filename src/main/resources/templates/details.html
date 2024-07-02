@@ -15,6 +15,17 @@
 		<li th:if="${user.email}" th:text="${user.email}"></li>
 		<li th:if="${user.email == null}" th:text="${'No Existe Email'}"></li>
 	</ul>
+	<a th:href="@{/list}">Ver listado</a><br>
+	<!-- Manera 1 de concatenar una variable en thymeleaf -->
+	<a th:href="@{'/api/params/foo?message=' + ${title}}">Ver mensaje 1</a><br>
+	<!-- Manera 2 de concatenar una variable en thymeleaf -->
+	<a th:href="@{/api/params/foo(message=${user.name})}">Ver mensaje 2</a><br>
+	<!-- Manera 3 de concatenar una variable en thymeleaf -->
+	<a th:href="@{/api/params/bar(text=${user.name},code=2505)}">Ver mensaje 3</a><br>
+	<!-- Manera PathVariable en thymeleaf -->
+	<a th:href="@{'/api/var/baz/'+${user.name}}">Ver PathVariable</a><br>
+	<!-- Manera PathVariable Estatico en thymeleaf -->
+	<a th:href="@{'/api/var/baz/'+'Texto Estatico'}">Ver PathVariable Estatico</a><br>
 </body>
 
 </html>

@@ -44,4 +44,9 @@ public class User {
 		this.lastName = lastName;
 	}
 
+	@Override
+	public String toString() {
+		return "Name: " + name + " " + lastName + " Email: " + email;
+	}
+
 }
